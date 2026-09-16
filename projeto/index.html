@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta name="theme-color" content="#10231b">
+  <title>Casa Sustentável — Experiência 3D</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loading"><div class="loader"></div><b>Preparando a casa...</b><span>Experiência 3D touch-first</span></div>
+
+  <section id="intro" class="screen">
+    <div class="intro-card">
+      <div class="leaf">🌱</div>
+      <div class="eyebrow">PROJETO ESCOLAR • SUSTENTABILIDADE</div>
+      <h1>Casa<br><strong>Sustentável</strong></h1>
+      <p>Explore a casa, identifique desperdícios e descubra como pequenas mudanças podem torná-la mais sustentável.</p>
+      <button id="enterBtn" class="primary big">ENTRAR NA CASA</button>
+      <div class="touch-note">TOUCH-FIRST • JOYSTICK • SEM TECLADO</div>
+    </div>
+  </section>
+
+  <div id="app" aria-hidden="true">
+    <div id="hud">
+      <div class="score">
+        <span>ÍNDICE DE SUSTENTABILIDADE</span>
+        <strong id="scoreValue">0%</strong>
+        <div class="progress"><i id="progressBar"></i></div>
+      </div>
+      <button id="menuBtn" class="icon-btn" aria-label="Abrir menu">☰</button>
+    </div>
+
+    <div id="hint">TOQUE NO OBJETO OU EM INTERAGIR</div>
+    <button id="interactBtn" class="interact">INTERAGIR</button>
+
+    <div id="joystick" class="joystick">
+      <div class="joy-ring"><div id="joyKnob"></div></div>
+    </div>
+
+    <div id="lookHint">ARRASTE A TELA PARA OLHAR</div>
+
+    <div id="menu" class="panel">
+      <div class="panel-head"><h2>Menu</h2><button class="close" data-close="menu">×</button></div>
+      <button class="menu-action" id="mapBtn">🗺️ MAPA DA CASA</button>
+      <button class="menu-action" id="roofBtn">☀️ VER TELHADO</button>
+      <button class="menu-action" id="demoBtn">▶️ MODO DEMONSTRAÇÃO</button>
+      <button class="menu-action danger" id="resetBtn">↻ REINICIAR CASA</button>
+      <button class="menu-action" id="soundBtn">🔊 SOM: ATIVADO</button>
+      <div class="legend"><b>Objetivo</b><span>IDENTIFICAR → ENTENDER → SOLUCIONAR → TRANSFORMAR</span></div>
+    </div>
+
+    <div id="map" class="panel">
+      <div class="panel-head"><h2>Mapa</h2><button class="close" data-close="map">×</button></div>
+      <div class="map-house">
+        <div class="map-room sala" data-room="sala">SALA<br><small>TV</small></div>
+        <div class="map-room cozinha" data-room="cozinha">COZINHA<br><small>Alimentos • Reciclagem</small></div>
+        <div class="map-room banheiro" data-room="banheiro">BANHEIRO<br><small>Água</small></div>
+        <div class="map-room quarto" data-room="quarto">QUARTO<br><small>Energia</small></div>
+        <div class="map-room lavanderia" data-room="lavanderia">LAVANDERIA<br><small>Água • Energia</small></div>
+        <div class="map-room garagem" data-room="garagem">GARAGEM<br><small>Transporte</small></div>
+      </div>
+      <p class="map-tip">Os pontos destacados indicam os principais pontos educativos.</p>
+    </div>
+
+    <div id="modal" class="modal">
+      <div class="modal-card">
+        <button class="close" id="modalClose">×</button>
+        <div id="modalIcon" class="modal-icon">⚠️</div>
+        <div id="modalTag" class="tag">PONTO EDUCATIVO</div>
+        <h2 id="modalTitle"></h2>
+        <div id="modalBody"></div>
+        <div id="modalAction"></div>
+      </div>
+    </div>
+
+    <div id="toast"></div>
+    <div id="demoBar"><span id="demoText">Modo demonstração</span><button id="demoStop">PARAR</button></div>
+
+    <div id="roofMode"><button id="roofBack">← VOLTAR À CASA</button></div>
+    <div id="endScreen" class="screen">
+      <div class="end-card">
+        <div class="leaf">🌱</div>
+        <div class="eyebrow">EXPERIÊNCIA CONCLUÍDA</div>
+        <h1>Casa Mais<br><strong>Sustentável</strong></h1>
+        <p>Você identificou situações de desperdício de água, energia, alimentos e outros recursos, além de observar como escolhas de transporte podem influenciar os impactos ambientais.</p>
+        <h3>O QUE APRENDEMOS?</h3>
+        <ul>
+          <li>Economizar água evita desperdícios.</li>
+          <li>Desligar equipamentos reduz consumo desnecessário.</li>
+          <li>Evitar desperdício de alimentos preserva recursos.</li>
+          <li>A separação correta dos resíduos facilita sua destinação adequada.</li>
+          <li>A energia solar pode contribuir para a geração de eletricidade.</li>
+          <li>Diferentes formas de transporte possuem diferentes impactos ambientais.</li>
+          <li>Pequenas mudanças podem contribuir para uma rotina mais sustentável.</li>
+        </ul>
+        <button id="againBtn" class="primary big">EXPLORAR NOVAMENTE</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="importmap">
+  {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}
+  </script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
